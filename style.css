@@ -105,6 +105,8 @@ ul.newcurr .flag{
     margin-top: 10px;
     border-radius: 50px;
     border: 2px solid red;
+    background-color: red;
+    font-size: 20px;
 }
 .close:hover{
     cursor: pointer;
