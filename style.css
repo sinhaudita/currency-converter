@@ -1,0 +1,250 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(33, 56, 56);
+    color: azure;
+}
+
+.container{
+    width: 500px;
+    margin: 20px auto;
+    position: relative;
+}
+.title{
+    background-color: black;
+    text-align: center;
+    /* height: 50px; */
+    padding: 1.5rem;
+    font-size: 25px;
+}
+.time_last_update_utc{
+    text-align: right;
+    padding-top: 5px;
+    background-color: gray;
+    padding-right: 15px;
+    padding-bottom: 8px;
+}
+@media screen and (max-width:767px) {
+    .container{
+        width:450px;
+    }
+    
+}
+
+ul.newcurr{
+    margin-top: 15px;
+    height: calc(100vh - 40px - 107px - 32px - 20px);
+    background-color: rgb(85, 98, 112);
+    overflow-y: auto;
+    padding: 0.5rem 1.5rem 1rem 1.5rem;
+}
+
+ul.newcurr li{
+    background-color: #2d2d37;
+    margin-bottom: 15px;
+    border-radius: 5px 5px;
+    padding: 1rem 1rem 0.5rem 1rem;
+    position: relative;
+    list-style: none;
+}
+ul.newcurr li:last-child{
+    margin-bottom: 0;
+}
+
+ul.newcurr .base-currency{
+    background-color: #3d6287;
+}
+ul.newcurr .flag{
+    vertical-align: top;
+}
+.info{
+    display: inline-block;
+    width: 78%;
+}
+.info .input span{
+    font-size: 20px;
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+}
+
+.info .input input{
+    width: 65%;
+    font-size: 25px;
+    background-color: transparent;
+    padding: 7px;
+    color:blanchedalmond;
+    border-radius: 6px 6px;
+    border-color: aqua;
+    margin-bottom: 8px;
+}
+.info .curr-name{
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 2.5rem;
+    margin-bottom: 4px;
+}
+.info .base-curr-rate{
+    font-size: 15px;
+    margin-left: 2.5rem ;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    padding-left:3px ;
+    padding-bottom: 3px;
+    margin-right: 15px;
+    margin-top: 10px;
+    border-radius: 50px;
+    border: 2px solid red;
+}
+.close:hover{
+    cursor: pointer;
+}
+
+ul.currlist{
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    background-color: rgb(167, 167, 167);
+    color: black;
+    width: 100%;
+    /* height: calc(100vh - 40px - 107px + 35px - 20px); */
+    overflow-y: auto;
+    /* display: none; */
+    height: 0;
+    transition: all 0.5s;
+}
+
+ul.currlist li{
+    list-style: none;
+    padding: 12px;
+    border-bottom: 1px solid dimgray;
+    padding-bottom: 8px;
+    
+}
+ul.currlist li.disabled{
+    opacity:0.5;
+    cursor: not-allowed;
+}
+ul.currlist .flag{
+    vertical-align: top;
+}
+ul.currlist p{
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 23px;
+    font-weight: bold;
+}
+
+
+.addbtn{
+    margin-top: 20px;
+    width: 500px;
+    height: 50px;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color:rgb(5, 170, 170);
+    border: none;
+    color: white;
+    overflow-y: auto;
+    position: relative;
+}
+
+.addbtn.open{
+    background-color: rgb(177, 117, 6);
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+    
+}
+.addbtn.open+.currlist{
+    height: calc(100vh - 40px - 107px + 35px - 20px);
+}
+.addbtn i{
+    position: absolute;
+    left: 28%;
+    font-size: 2rem;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.addbtn.open i{
+    opacity: 1;
+    left: 1.5rem;
+}
+.addbtn.open+.currlist li:hover{
+    background-color: rgb(209, 209, 191);
+    
+}
+@media (max-width:767){
+    .addbtn{
+        width: 70vw;
+    }
+}
+
+
+
+
+@media (max-width:600px){
+    .container{
+        width:80%;
+        margin: 0 auto;
+    }
+    ul.newcurr{
+        height: calc(100vh - 83px - 34px - 51px);
+    }
+    .title h1{
+        font-size: 1.5rem;
+    }
+    .flag{
+        width: 3rem;
+        height: 2rem;
+    }
+    .info .input span{
+        font-size: 1.25rem;
+        width: 3.5rem;
+    }
+    .info .input input{
+        font-size: 1.25rem;
+        width: 76%;
+    }
+    .info .curr-name{
+        margin-left: 3.5rem;
+    }
+    .info .base-curr-rate{
+        margin-left: 3.5rem;
+    }
+    ul.currlist.open{
+        bottom: 48px;
+        height: calc(100vh - 40px - 51px);
+    }
+    .addbtn{
+        /* width: 95vw; */
+        /* margin-left: 0.5rem; */
+        width: 80vw;
+        
+    }
+    .addbtn i{
+        left: 25%;
+        top: 0.65rem;
+        
+    }
+
+}
+/* @media screen and (max-width:414px) {
+    .container{
+        width: 100%;
+        height: 80vh;
+    }
+    .addbtn{
+        width: 350px;
+    }
+    
+} */
